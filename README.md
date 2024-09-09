@@ -5,7 +5,7 @@ A simple game implemented with Next.js.
 # Live Demo
 
 Check out the live demo at
-** url **
+[https://millionaire-game-ochre.vercel.app/](https://millionaire-game-ochre.vercel.app/)
 
 ## Requirements
 
