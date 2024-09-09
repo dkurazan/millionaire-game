@@ -14,7 +14,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "npm run lint",
+      "git diff --cached --name-only | grep -E '\\.(js|jsx|ts|tsx)$' | xargs next lint",
       "npm run prettier"
     ]
   },
