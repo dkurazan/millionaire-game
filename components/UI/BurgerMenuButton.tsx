@@ -20,13 +20,16 @@ export default function BurgerMenuButton() {
   };
 
   return (
-    <div
+    <button
       className={cssClasses}
       onClick={handleOnClick}
+      onKeyDown={handleOnClick}
+      aria-label="Open modal"
+      type='button'
     >
-      <span className={styles.strip}></span>
-      <span className={styles.strip}></span>
-      <span className={styles.strip}></span>
-    </div>
+      <span className={styles.strip} />
+      <span className={styles.strip} />
+      <span className={styles.strip} />
+    </button>
   );
 }

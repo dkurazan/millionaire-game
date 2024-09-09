@@ -9,7 +9,7 @@ type ErrorProps = {
   };
 };
 
-export default function error({ error }: ErrorProps) {
+export default function Error({ error }: ErrorProps) {
   return (
     <div className="error">
       <h1>Something went wrong :/</h1>

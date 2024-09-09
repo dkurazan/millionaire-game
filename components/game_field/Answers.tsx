@@ -1,11 +1,11 @@
 import React, { FormEvent } from 'react';
+import toast from 'react-hot-toast';
 import { getUserAnswers, validateAnswers } from '@/utils/helpers';
 import { useAppDispatch } from '@/hooks/reduxHooks';
 import { setAnswerState } from '@/store/slices/answerSlice';
 import AnswerItem from './AnswerItem';
 import Button from '../UI/Button';
 import styles from './Answers.module.scss';
-import toast from 'react-hot-toast';
 
 type AnswersProps = {
   answerOptions: string[];
@@ -39,17 +39,21 @@ export default function Answers({
 
     // sets the answer correctness state
     if (validationResult === undefined) {
-      toast.error('You have selected wrong ammount of answers! Please, try again.');
+      toast.error(
+        'You have selected wrong ammount of answers! Please, try again.',
+      );
 
       return null;
-    } else if (validationResult) {
+    }
+
+    if (validationResult) {
       dispatch(setAnswerState('correct'));
     } else {
       dispatch(setAnswerState('wrong'));
     }
 
     // starts a new iteration
-    launchNextStage(validationResult);
+    return launchNextStage(validationResult);
   };
 
   return (
@@ -64,7 +68,7 @@ export default function Answers({
           />
         ))}
       </ul>
-      <Button type="submit" disabled={answerState === 'pending' ? false : true}>
+      <Button type="submit" disabled={answerState !== 'pending'}>
         Answer
       </Button>
     </form>

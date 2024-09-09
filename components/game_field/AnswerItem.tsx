@@ -43,7 +43,7 @@ export default function AnswerItem({
         name={answer}
         id={`checkbox-${index}`}
         className={styles.checkbox}
-        disabled={answerState === 'pending' ? false : true}
+        disabled={answerState !== 'pending'}
       />
       <label
         htmlFor={`checkbox-${index}`}

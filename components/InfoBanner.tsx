@@ -1,12 +1,13 @@
 'use client';
 
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import Link from 'next/link';
 import styles from './InfoBanner.module.scss';
 import HandSVG from './UI/HandSvg';
 
 type InfoBannerProps = {
-  suptitle?: string;
+  suptitle?: string | boolean;
   title: string;
   buttonText: string;
   buttonUrl: string;
@@ -15,12 +16,12 @@ type InfoBannerProps = {
 };
 
 export default function InfoBanner({
-  suptitle,
+  suptitle = false,
   title,
   buttonText,
   buttonUrl,
-  buttonOnClick,
-  diagonalBg,
+  buttonOnClick = () => {},
+  diagonalBg = false,
 }: InfoBannerProps) {
   return (
     <div

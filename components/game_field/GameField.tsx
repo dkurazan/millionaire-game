@@ -33,6 +33,8 @@ export default function GameField() {
         dispatch(openNextQuestion());
         dispatch(setAnswerState('pending'));
       }
+
+      return null;
     }, gameConfig.settings.answer_result_visibility_duration);
 
     return null;
