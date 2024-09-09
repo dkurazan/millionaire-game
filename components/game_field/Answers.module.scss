@@ -1,0 +1,145 @@
+@use '/app/assets/variables' as *;
+
+.answersForm {
+  margin-top: 10px;
+}
+
+.answersList {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  row-gap: 32px;
+  list-style: none;
+}
+
+.answersList.extendedGrid {
+  grid-template-columns: repeat(3, min-content);
+}
+
+.answerItem {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+}
+
+.answerContent {
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  line-height: 1.16;
+  font-weight: 400;
+}
+
+.answerIndex {
+  font-weight: 600;
+  color: $color-orange-100;
+}
+
+.backgroundSVG {
+  transition: fill 0.2s ease-in-out;
+
+  &.mobile {
+    display: none;
+  }
+
+  & > path {
+    transition: stroke 0.2s ease-in-out;
+  }
+}
+
+.checkbox {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+
+  &:checked + .answerItem {
+    .backgroundSVG {
+      fill: $color-orange-5;
+
+      path {
+        stroke: $color-orange-100;
+      }
+    }
+  }
+
+  &:checked + .answerItem.wrong {
+    .backgroundSVG {
+      fill: $color-red-light;
+
+      path {
+        stroke: $color-red;
+      }
+    }
+  }
+
+  &:checked + .answerItem.correct {
+    .backgroundSVG {
+      fill: $color-green-light;
+
+      path {
+        stroke: $color-green;
+      }
+    }
+  }
+}
+
+.answersForm button {
+  margin: 40px 0 0 auto;
+}
+
+@keyframes fadeInOut {
+  to {
+    fill: $color-orange-80;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .answersList.extendedGrid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .answerContent {
+    left: 43px;
+  }
+
+  .backgroundSVG.desktop {
+    display: none;
+  }
+
+  .backgroundSVG.mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .answersList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+
+  .answersForm button {
+    margin: 40px auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .answerContent {
+    font-size: 14px;
+  }
+
+  .answersForm button {
+    margin: 20px auto 0;
+  }
+}

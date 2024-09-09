@@ -1,0 +1,152 @@
+@use '/app/assets/variables' as *;
+
+.sideBar {
+  width: fit-content;
+  margin: auto 0;
+}
+
+.levelsList {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 8px;
+  list-style: none;
+}
+
+.mapItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: $color-grey;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.mapItemActive::before {
+  background-color: $color-orange-100 !important;
+}
+
+.reward {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.16;
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+  transition: color 0.3s ease-in-out;
+}
+
+.backgroundSVG {
+  position: relative;
+  fill: $color-white;
+
+  path {
+    transition: stroke 0.3s ease-in-out;
+  }
+
+  &.mobile {
+    display: none;
+  }
+}
+
+.mapItemActive {
+  .reward {
+    color: $color-orange-100;
+  }
+
+  .backgroundSVG > path {
+    stroke: $color-orange-100;
+  }
+}
+
+.mapItemExpiered {
+  .reward {
+    color: $color-grey;
+  }
+}
+
+@media screen and (max-width: $viewport-xxl) {
+  .backgroundSVG.desktop {
+    display: none;
+  }
+
+  .backgroundSVG.mobile {
+    display: block;
+  }
+
+  .mapItem::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: $color-grey;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .mapItemActive::before {
+    background-color: $color-orange-100 !important;
+  }
+
+  .reward {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $viewport-md) {
+  .sideBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: $color-grey-light;
+    transition: right 0.5s ease-in-out;
+
+    &.active {
+      right: 0;
+    }
+
+    .levelsList {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .sideBar {
+    overflow-y: scroll;
+    min-width: fit-content;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+}
+
+@media screen and (max-width: $viewport-md) and (max-height: 600px) {
+
+  .levelsList {
+    padding: 200px 0 40px;
+  }
+}

@@ -1,0 +1,96 @@
+@use '/app/assets/variables' as *;
+
+.bannerWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagonalBg {
+  background: linear-gradient(
+      to bottom right,
+      transparent 0 50%,
+      $color-orange-5 50% 100%
+    )
+    top left;
+
+  .title {
+    max-width: 470px;
+  }
+}
+
+.banner {
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 20px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.16;
+}
+
+.suptitle {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.16;
+  text-align: left;
+  color: #88888c;
+}
+
+@media screen and (max-width: $viewport-xl) {
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .titleBlock {
+    align-items: center;
+  }
+
+  .image {
+    max-height: 200px;
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $viewport-md) {
+  .title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $viewport-xs) {
+  .banner {
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .image {
+    margin: auto 0;
+  }
+
+  .titleBlock {
+    gap: 102px;
+    margin-bottom: 48px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}

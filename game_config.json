@@ -1,0 +1,187 @@
+{
+  "levels": [
+    {
+      "grade": 1,
+      "question": "What is the capital of Italy?",
+      "answer_options": [
+        "Rome",
+        "Paris",
+        "London",
+        "Berlin"
+      ],
+      "correct_answers": [
+        "Rome"
+      ],
+      "reward": 500
+    },
+    {
+      "grade": 2,
+      "question": "Which planet is known as the Red Planet?",
+      "answer_options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "correct_answers": [
+        "Mars"
+      ],
+      "reward": 1000
+    },
+    {
+      "grade": 3,
+      "question": "What is the largest ocean on Earth?",
+      "answer_options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean",
+        "Pacific Ocean"
+      ],
+      "correct_answers": [
+        "Pacific Ocean"
+      ],
+      "reward": 2000
+    },
+    {
+      "grade": 4,
+      "question": "Which element has the chemical symbol 'O'?",
+      "answer_options": [
+        "Oxygen",
+        "Gold",
+        "Osmium",
+        "Oganesson"
+      ],
+      "correct_answers": [
+        "Oxygen"
+      ],
+      "reward": 4000
+    },
+    {
+      "grade": 5,
+      "question": "In which year did the Titanic sink?",
+      "answer_options": [
+        "1912",
+        "1910",
+        "1920",
+        "1905"
+      ],
+      "correct_answers": [
+        "1912"
+      ],
+      "reward": 8000
+    },
+    {
+      "grade": 6,
+      "question": "Which of the following are programming languages?",
+      "answer_options": [
+        "Python",
+        "JavaScript",
+        "HTML",
+        "Java",
+        "CSS",
+        "C++"
+      ],
+      "correct_answers": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "C++"
+      ],
+      "reward": 16000
+    },
+    {
+      "grade": 7,
+      "question": "What are the primary colors of light?",
+      "answer_options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow",
+        "Purple"
+      ],
+      "correct_answers": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "reward": 32000
+    },
+    {
+      "grade": 8,
+      "question": "Which country is known as the Land of the Rising Sun?",
+      "answer_options": [
+        "China",
+        "Japan",
+        "South Korea",
+        "Thailand"
+      ],
+      "correct_answers": [
+        "Japan"
+      ],
+      "reward": 64000
+    },
+    {
+      "grade": 9,
+      "question": "Which animals are classified as mammals?",
+      "answer_options": [
+        "Dolphin",
+        "Shark",
+        "Elephant",
+        "Crocodile",
+        "Bat"
+      ],
+      "correct_answers": [
+        "Dolphin",
+        "Elephant",
+        "Bat"
+      ],
+      "reward": 125000
+    },
+    {
+      "grade": 10,
+      "question": "What is the smallest prime number?",
+      "answer_options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_answers": [
+        "2"
+      ],
+      "reward": 250000
+    },
+    {
+      "grade": 11,
+      "question": "Which gas do plants absorb from the atmosphere?",
+      "answer_options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide",
+        "Hydrogen"
+      ],
+      "correct_answers": [
+        "Carbon Dioxide"
+      ],
+      "reward": 500000
+    },
+    {
+      "grade": 12,
+      "question": "Which planet is the hottest in the solar system?",
+      "answer_options": [
+        "Venus",
+        "Mercury",
+        "Mars",
+        "Jupiter"
+      ],
+      "correct_answers": [
+        "Venus"
+      ],
+      "reward": 1000000
+    }
+  ],
+  "settings": {
+    "currency": "USD",
+    "answer_result_visibility_duration": 1500
+  }
+}
