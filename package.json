@@ -7,7 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "test": "vitest",
+    "prettier": "prettier -w .",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run prettier"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -24,15 +33,20 @@
     "typescript": "^5"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.35.2",
     "husky": "^9.1.5",
+    "jsdom": "^25.0.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "sass": "^1.78.0"
+    "sass": "^1.78.0",
+    "vitest": "^2.0.5"
   }
 }
